@@ -1,0 +1,163 @@
+{
+  "info": {
+    "name": "Nova-core-legacy API",
+    "description": "Coleção Postman gerada automaticamente com todas as rotas encontradas nos controllers do projeto.",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Fornecedor - Criar",
+      "request": {
+        "method": "POST",
+        "header": [
+          { "key": "Content-Type", "value": "application/json" }
+        ],
+        "url": {
+          "raw": "{{baseUrl}}/v1/fornecedor/criar",
+          "host": ["{{baseUrl}}"],
+          "path": ["v1", "fornecedor", "criar"]
+        },
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"nome\": \"Fornecedor Exemplo\",\n  \"cnpj\": \"12345678000199\",\n  \"email\": \"fornecedor@exemplo.com\"\n}"
+        },
+        "description": "Cria um novo fornecedor. Exemplo de payload acima."
+      },
+      "response": [
+        {
+          "name": "Sucesso",
+          "originalRequest": {},
+          "status": "201 Created",
+          "code": 201,
+          "body": "{\n  \"id\": 1,\n  \"nome\": \"Fornecedor Exemplo\",\n  \"cnpj\": \"12345678000199\"\n}"
+        }
+      ]
+    },
+    { "name": "Fornecedor - Atualizar", "request": { "method": "PATCH", "url": { "raw": "{{baseUrl}}/v1/fornecedor/atualizar/:id", "host": ["{{baseUrl}}"], "path": ["v1", "fornecedor", "atualizar", ":id"] }, "body": { "mode": "raw", "raw": "{\n  \"nome\": \"Fornecedor Atualizado\"\n}" } } },
+    { "name": "Fornecedor - Deletar", "request": { "method": "DELETE", "url": { "raw": "{{baseUrl}}/v1/fornecedor/deletar/:id", "host": ["{{baseUrl}}"], "path": ["v1", "fornecedor", "deletar", ":id"] } } },
+    { "name": "Fornecedor - Desativar", "request": { "method": "PATCH", "url": { "raw": "{{baseUrl}}/v1/fornecedor/desativar/:id", "host": ["{{baseUrl}}"], "path": ["v1", "fornecedor", "desativar", ":id"] } } },
+    { "name": "Fornecedor - Listar", "request": { "method": "GET", "url": { "raw": "{{baseUrl}}/v1/fornecedor/listar", "host": ["{{baseUrl}}"], "path": ["v1", "fornecedor", "listar"] } } },
+    { "name": "Fornecedor Endereço - Criar", "request": { "method": "POST", "url": { "raw": "{{baseUrl}}/v1/fornecedor/endereco/criar", "host": ["{{baseUrl}}"], "path": ["v1", "fornecedor", "endereco", "criar"] } } },
+    { "name": "Fornecedor Endereço - Deletar", "request": { "method": "DELETE", "url": { "raw": "{{baseUrl}}/v1/fornecedor/delete", "host": ["{{baseUrl}}"], "path": ["v1", "fornecedor", "delete"] } } },
+    {
+      "name": "Produto - Criar",
+      "request": {
+        "method": "POST",
+        "header": [
+          { "key": "Content-Type", "value": "application/json" }
+        ],
+        "url": {
+          "raw": "{{baseUrl}}/v1/produto/criar",
+          "host": ["{{baseUrl}}"],
+          "path": ["v1", "produto", "criar"]
+        },
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"nome\": \"Produto Exemplo\",\n  \"preco\": 99.99,\n  \"categoriaId\": 1\n}"
+        },
+        "description": "Cria um novo produto. Exemplo de payload acima."
+      },
+      "response": [
+        {
+          "name": "Sucesso",
+          "originalRequest": {},
+          "status": "201 Created",
+          "code": 201,
+          "body": "{\n  \"id\": 1,\n  \"nome\": \"Produto Exemplo\",\n  \"preco\": 99.99\n}"
+        }
+      ]
+    },
+    { "name": "Produto - Atualizar", "request": { "method": "POST", "url": { "raw": "{{baseUrl}}/v1/produto/atualizar/:id", "host": ["{{baseUrl}}"], "path": ["v1", "produto", "atualizar", ":id"] } } },
+    { "name": "Produto - Deletar", "request": { "method": "POST", "url": { "raw": "{{baseUrl}}/v1/produto/deletar/:id", "host": ["{{baseUrl}}"], "path": ["v1", "produto", "deletar", ":id"] } } },
+    { "name": "Produto - Adicionar", "request": { "method": "POST", "url": { "raw": "{{baseUrl}}/v1/produto/adicionar", "host": ["{{baseUrl}}"], "path": ["v1", "produto", "adicionar"] } } },
+    { "name": "Produto - Desativar", "request": { "method": "POST", "url": { "raw": "{{baseUrl}}/v1/produto/desativar/:id", "host": ["{{baseUrl}}"], "path": ["v1", "produto", "desativar", ":id"] } } },
+    { "name": "Produto - Todos", "request": { "method": "GET", "url": { "raw": "{{baseUrl}}/v1/produto/todos", "host": ["{{baseUrl}}"], "path": ["v1", "produto", "todos"] } } },
+    { "name": "Produto - Filtrar por SKU", "request": { "method": "GET", "url": { "raw": "{{baseUrl}}/v1/produto/filtrarPorSku", "host": ["{{baseUrl}}"], "path": ["v1", "produto", "filtrarPorSku"] } } },
+    { "name": "Produto - Pesquisar por ID", "request": { "method": "GET", "url": { "raw": "{{baseUrl}}/v1/produto/pesquisar/:id", "host": ["{{baseUrl}}"], "path": ["v1", "produto", "pesquisar", ":id"] } } },
+    { "name": "Produto - Limitado", "request": { "method": "GET", "url": { "raw": "{{baseUrl}}/v1/produto/limitado", "host": ["{{baseUrl}}"], "path": ["v1", "produto", "limitado"] } } },
+    { "name": "Produto Categoria - Criar", "request": { "method": "POST", "url": { "raw": "{{baseUrl}}/v1/produto/categoria/criar", "host": ["{{baseUrl}}"], "path": ["v1", "produto", "categoria", "criar"] } } },
+    { "name": "Categoria - Atualizar", "request": { "method": "PATCH", "url": { "raw": "{{baseUrl}}/v1/categoria/atualizar/:id", "host": ["{{baseUrl}}"], "path": ["v1", "categoria", "atualizar", ":id"] } } },
+    { "name": "Categoria - Desativar", "request": { "method": "PATCH", "url": { "raw": "{{baseUrl}}/v1/categoria/desativar/:id", "host": ["{{baseUrl}}"], "path": ["v1", "categoria", "desativar", ":id"] } } },
+    { "name": "Categoria - Excluir", "request": { "method": "DELETE", "url": { "raw": "{{baseUrl}}/v1/categoria/excluir/:id", "host": ["{{baseUrl}}"], "path": ["v1", "categoria", "excluir", ":id"] } } },
+    {
+      "name": "Pedido - Criar",
+      "request": {
+        "method": "POST",
+        "header": [
+          { "key": "Content-Type", "value": "application/json" }
+        ],
+        "url": {
+          "raw": "{{baseUrl}}/v1/pedido/criar",
+          "host": ["{{baseUrl}}"],
+          "path": ["v1", "pedido", "criar"]
+        },
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"clienteId\": 1,\n  \"produtos\": [{\n    \"produtoId\": 1,\n    \"quantidade\": 2\n  }]\n}"
+        },
+        "description": "Cria um novo pedido. Exemplo de payload acima."
+      },
+      "response": [
+        {
+          "name": "Sucesso",
+          "originalRequest": {},
+          "status": "201 Created",
+          "code": 201,
+          "body": "{\n  \"id\": 1,\n  \"clienteId\": 1,\n  \"produtos\": [{\"produtoId\": 1, \"quantidade\": 2}]\n}"
+        }
+      ]
+    },
+    { "name": "Pedido - Atualizar Endereço", "request": { "method": "POST", "url": { "raw": "{{baseUrl}}/v1/pedido/atualizar/endereco", "host": ["{{baseUrl}}"], "path": ["v1", "pedido", "atualizar", "endereco"] } } },
+    { "name": "Pedido - Cancelamento", "request": { "method": "POST", "url": { "raw": "{{baseUrl}}/v1/pedido/cancelamento", "host": ["{{baseUrl}}"], "path": ["v1", "pedido", "cancelamento"] } } },
+    { "name": "Pedido - Listar", "request": { "method": "GET", "url": { "raw": "{{baseUrl}}/v1/pedido/listar", "host": ["{{baseUrl}}"], "path": ["v1", "pedido", "listar"] } } },
+    { "name": "Pedido - Retorna por ID", "request": { "method": "GET", "url": { "raw": "{{baseUrl}}/v1/pedido/retorna/:id", "host": ["{{baseUrl}}"], "path": ["v1", "pedido", "retorna", ":id"] } } },
+    { "name": "Pedido - Deletar", "request": { "method": "DELETE", "url": { "raw": "{{baseUrl}}/v1/pedido/delete/:id", "host": ["{{baseUrl}}"], "path": ["v1", "pedido", "delete", ":id"] } } },
+    {
+      "name": "Cliente - Atualizar",
+      "request": {
+        "method": "PUT",
+        "header": [
+          { "key": "Content-Type", "value": "application/json" }
+        ],
+        "url": {
+          "raw": "{{baseUrl}}/v1/cliente/atualizar/:id",
+          "host": ["{{baseUrl}}"],
+          "path": ["v1", "cliente", "atualizar", ":id"]
+        },
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"nome\": \"Cliente Exemplo\",\n  \"email\": \"cliente@exemplo.com\",\n  \"endereco\": \"Rua Exemplo, 123\"\n}"
+        },
+        "description": "Atualiza os dados de um cliente. Exemplo de payload acima."
+      },
+      "response": [
+        {
+          "name": "Sucesso",
+          "originalRequest": {},
+          "status": "200 OK",
+          "code": 200,
+          "body": "{\n  \"id\": 1,\n  \"nome\": \"Cliente Exemplo\",\n  \"email\": \"cliente@exemplo.com\"\n}"
+        }
+      ]
+    },
+    { "name": "Cliente - Deletar", "request": { "method": "DELETE", "url": { "raw": "{{baseUrl}}/v1/cliente/deletar/:id", "host": ["{{baseUrl}}"], "path": ["v1", "cliente", "deletar", ":id"] } } },
+    { "name": "Cliente - Filtros", "request": { "method": "GET", "url": { "raw": "{{baseUrl}}/v1/cliente/filtros/:cpf/:name/:lastname", "host": ["{{baseUrl}}"], "path": ["v1", "cliente", "filtros", ":cpf", ":name", ":lastname"] } } },
+    { "name": "Cliente - Pesquisar por Nome", "request": { "method": "GET", "url": { "raw": "{{baseUrl}}/v1/cliente/pesquisarPorNome", "host": ["{{baseUrl}}"], "path": ["v1", "cliente", "pesquisarPorNome"] } } },
+    { "name": "Cliente - Pesquisar por Data Registro", "request": { "method": "GET", "url": { "raw": "{{baseUrl}}/v1/cliente/pesquisarPorDataRegistro", "host": ["{{baseUrl}}"], "path": ["v1", "cliente", "pesquisarPorDataRegistro"] } } },
+    { "name": "Cliente - Ordenação", "request": { "method": "GET", "url": { "raw": "{{baseUrl}}/v1/cliente/ordenacao", "host": ["{{baseUrl}}"], "path": ["v1", "cliente", "ordenacao"] } } },
+    { "name": "Clientes - Get All", "request": { "method": "GET", "url": { "raw": "{{baseUrl}}/v1/clientes", "host": ["{{baseUrl}}"], "path": ["v1", "clientes"] } } },
+    { "name": "Clientes - Paginação", "request": { "method": "GET", "url": { "raw": "{{baseUrl}}/v1/clientes/paginacao", "host": ["{{baseUrl}}"], "path": ["v1", "clientes", "paginacao"] } } },
+    { "name": "Contato - Criar", "request": { "method": "POST", "url": { "raw": "{{baseUrl}}/v1/contato/criar", "host": ["{{baseUrl}}"], "path": ["v1", "contato", "criar"] } } },
+    { "name": "Cupom - Criar", "request": { "method": "POST", "url": { "raw": "{{baseUrl}}/v1/cupom/criar", "host": ["{{baseUrl}}"], "path": ["v1", "cupom", "criar"] } } },
+    { "name": "Cupom - Desativar", "request": { "method": "POST", "url": { "raw": "{{baseUrl}}/v1/cupom/desativar", "host": ["{{baseUrl}}"], "path": ["v1", "cupom", "desativar"] } } },
+    { "name": "Auth - Registrar", "request": { "method": "POST", "url": { "raw": "{{baseUrl}}/v1/auth/registrar", "host": ["{{baseUrl}}"], "path": ["v1", "auth", "registrar"] } } },
+    { "name": "Auth - Entrar", "request": { "method": "POST", "url": { "raw": "{{baseUrl}}/v1/auth/entrar", "host": ["{{baseUrl}}"], "path": ["v1", "auth", "entrar"] } } },
+    { "name": "Auth - Redefinir Senha", "request": { "method": "POST", "url": { "raw": "{{baseUrl}}/v1/auth/redefinir-senha", "host": ["{{baseUrl}}"], "path": ["v1", "auth", "redefinir-senha"] } } },
+    { "name": "Auth - Validar Token Redefinição Senha", "request": { "method": "POST", "url": { "raw": "{{baseUrl}}/v1/auth/validar/token/redefinicao/senha", "host": ["{{baseUrl}}"], "path": ["v1", "auth", "validar", "token", "redefinicao", "senha"] } } },
+    { "name": "Auth - Valida Token", "request": { "method": "POST", "url": { "raw": "{{baseUrl}}/v1/auth/valida/token", "host": ["{{baseUrl}}"], "path": ["v1", "auth", "valida", "token"] } } },
+    { "name": "Auth - Redefinir Senha Cliente", "request": { "method": "POST", "url": { "raw": "{{baseUrl}}/v1/auth/redefinir/senha", "host": ["{{baseUrl}}"], "path": ["v1", "auth", "redefinir", "senha"] } } },
+    { "name": "Midia - Adicionar", "request": { "method": "POST", "url": { "raw": "{{baseUrl}}/v1/midia/adicionar", "host": ["{{baseUrl}}"], "path": ["v1", "midia", "adicionar"] } } },
+    { "name": "Checkout - Produto Disponível", "request": { "method": "POST", "url": { "raw": "{{baseUrl}}/v1/checkout/produto/disponivel", "host": ["{{baseUrl}}"], "path": ["v1", "checkout", "produto", "disponivel"] } } },
+    { "name": "Clear Cache", "request": { "method": "POST", "url": { "raw": "{{baseUrl}}/clear-cache", "host": ["{{baseUrl}}"], "path": ["clear-cache"] } } }
+  ]
+}
