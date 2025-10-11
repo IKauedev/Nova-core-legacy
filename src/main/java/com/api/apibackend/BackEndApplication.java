@@ -63,9 +63,4 @@ public class BackEndApplication {
     public ProdConfig prodBean() {
         return new ProdConfig();
     }
-
-    @Bean
-    public PasswordEncoder passwordEncoder() {
-        return new BCryptPasswordEncoder();
-    }
 }

@@ -19,7 +19,7 @@
         },
         "body": {
           "mode": "raw",
-          "raw": "{\n  \"nome\": \"Fornecedor Exemplo\",\n  \"cnpj\": \"12345678000199\",\n  \"email\": \"fornecedor@exemplo.com\"\n}"
+          "raw": "{\n  \"nameCompany\": \"Fornecedor Exemplo\",\n  \"region\": \"Sudeste\",\n  \"officeSupplier\": \"Comercial\",\n  \"dateCreated\": \"2025-08-12T00:00:00Z\",\n  \"contact\": \"11999999999\",\n  \"cnpj\": \"12345678000199\",\n  \"status\": 1,\n  \"supplierAddress\": {\n    \"road\": \"Rua Exemplo\",\n    \"neighborhood\": \"Centro\",\n    \"housenumber\": \"123\",\n    \"state\": \"SP\",\n    \"cep\": \"01000-000\"\n  }\n}"
         },
         "description": "Cria um novo fornecedor. Exemplo de payload acima."
       },
@@ -29,7 +29,7 @@
           "originalRequest": {},
           "status": "201 Created",
           "code": 201,
-          "body": "{\n  \"id\": 1,\n  \"nome\": \"Fornecedor Exemplo\",\n  \"cnpj\": \"12345678000199\"\n}"
+          "body": "{\n  \"idSupplier\": 1,\n  \"nameCompany\": \"Fornecedor Exemplo\",\n  \"region\": \"Sudeste\",\n  \"officeSupplier\": \"Comercial\",\n  \"dateCreated\": \"2025-08-12T00:00:00Z\",\n  \"contact\": \"11999999999\",\n  \"cnpj\": \"12345678000199\",\n  \"status\": 1,\n  \"supplierAddress\": {\n    \"road\": \"Rua Exemplo\",\n    \"neighborhood\": \"Centro\",\n    \"housenumber\": \"123\",\n    \"state\": \"SP\",\n    \"cep\": \"01000-000\"\n  }\n}"
         }
       ]
     },
@@ -53,9 +53,9 @@
         },
         "body": {
           "mode": "raw",
-          "raw": "{\n  \"nome\": \"Produto Exemplo\",\n  \"preco\": 99.99,\n  \"categoriaId\": 1\n}"
+          "raw": "{\n  \"name\": \"Produto Exemplo\",\n  \"description\": \"Descrição do produto\",\n  \"status\": 1,\n  \"sku\": \"SKU123\",\n  \"midia\": {},\n  \"category\": {\n    \"name\": \"Categoria Exemplo\",\n    \"status\": 1,\n    \"typeCategory\": \"Tipo\"\n  },\n  \"supplierEntity\": {},\n  \"priceEntity\": {},\n  \"stockEntity\": {},\n  \"unityEntity\": {}\n}"
         },
-        "description": "Cria um novo produto. Exemplo de payload acima."
+        "description": "Cria um novo produto. Exemplo de payload acima. Preencha os objetos aninhados conforme necessário."
       },
       "response": [
         {
@@ -63,7 +63,7 @@
           "originalRequest": {},
           "status": "201 Created",
           "code": 201,
-          "body": "{\n  \"id\": 1,\n  \"nome\": \"Produto Exemplo\",\n  \"preco\": 99.99\n}"
+          "body": "{\n  \"idProduct\": 1,\n  \"name\": \"Produto Exemplo\",\n  \"description\": \"Descrição do produto\",\n  \"status\": 1,\n  \"sku\": \"SKU123\"\n}"
         }
       ]
     },
@@ -107,7 +107,6 @@
         }
       ]
     },
-    { "name": "Pedido - Atualizar Endereço", "request": { "method": "POST", "url": { "raw": "{{baseUrl}}/v1/pedido/atualizar/endereco", "host": ["{{baseUrl}}"], "path": ["v1", "pedido", "atualizar", "endereco"] } } },
     { "name": "Pedido - Cancelamento", "request": { "method": "POST", "url": { "raw": "{{baseUrl}}/v1/pedido/cancelamento", "host": ["{{baseUrl}}"], "path": ["v1", "pedido", "cancelamento"] } } },
     { "name": "Pedido - Listar", "request": { "method": "GET", "url": { "raw": "{{baseUrl}}/v1/pedido/listar", "host": ["{{baseUrl}}"], "path": ["v1", "pedido", "listar"] } } },
     { "name": "Pedido - Retorna por ID", "request": { "method": "GET", "url": { "raw": "{{baseUrl}}/v1/pedido/retorna/:id", "host": ["{{baseUrl}}"], "path": ["v1", "pedido", "retorna", ":id"] } } },
@@ -126,7 +125,7 @@
         },
         "body": {
           "mode": "raw",
-          "raw": "{\n  \"nome\": \"Cliente Exemplo\",\n  \"email\": \"cliente@exemplo.com\",\n  \"endereco\": \"Rua Exemplo, 123\"\n}"
+          "raw": "{\n  \"isAdmin\": false,\n  \"name\": \"João\",\n  \"lastName\": \"Silva\",\n  \"cpf\": \"12345678901\",\n  \"phone\": \"11988887777\",\n  \"age\": 30,\n  \"gender\": \"M\",\n  \"email\": \"joao@exemplo.com\",\n  \"password\": \"senha123\",\n  \"birthDate\": \"1995-01-01T00:00:00Z\",\n  \"dateCreate\": \"2025-08-12T00:00:00Z\"\n}"
         },
         "description": "Atualiza os dados de um cliente. Exemplo de payload acima."
       },
@@ -136,7 +135,7 @@
           "originalRequest": {},
           "status": "200 OK",
           "code": 200,
-          "body": "{\n  \"id\": 1,\n  \"nome\": \"Cliente Exemplo\",\n  \"email\": \"cliente@exemplo.com\"\n}"
+          "body": "{\n  \"id\": 1,\n  \"name\": \"João\",\n  \"email\": \"joao@exemplo.com\"\n}"
         }
       ]
     },
@@ -157,7 +156,5 @@
     { "name": "Auth - Valida Token", "request": { "method": "POST", "url": { "raw": "{{baseUrl}}/v1/auth/valida/token", "host": ["{{baseUrl}}"], "path": ["v1", "auth", "valida", "token"] } } },
     { "name": "Auth - Redefinir Senha Cliente", "request": { "method": "POST", "url": { "raw": "{{baseUrl}}/v1/auth/redefinir/senha", "host": ["{{baseUrl}}"], "path": ["v1", "auth", "redefinir", "senha"] } } },
     { "name": "Midia - Adicionar", "request": { "method": "POST", "url": { "raw": "{{baseUrl}}/v1/midia/adicionar", "host": ["{{baseUrl}}"], "path": ["v1", "midia", "adicionar"] } } },
-    { "name": "Checkout - Produto Disponível", "request": { "method": "POST", "url": { "raw": "{{baseUrl}}/v1/checkout/produto/disponivel", "host": ["{{baseUrl}}"], "path": ["v1", "checkout", "produto", "disponivel"] } } },
-    { "name": "Clear Cache", "request": { "method": "POST", "url": { "raw": "{{baseUrl}}/clear-cache", "host": ["{{baseUrl}}"], "path": ["clear-cache"] } } }
-  ]
-}
+  { "name": "Checkout - Produto Disponível", "request": { "method": "POST", "url": { "raw": "{{baseUrl}}/v1/checkout/produto/disponivel", "host": ["{{baseUrl}}"], "path": ["v1", "checkout", "produto", "disponivel"] } } },
+  { "name": "Clear Cache", "request": { "method": "POST", "url": { "raw": "{{baseUrl}}/clear-cache", "host": ["{{baseUrl}}"], "path": ["clear-cache"] } } }  

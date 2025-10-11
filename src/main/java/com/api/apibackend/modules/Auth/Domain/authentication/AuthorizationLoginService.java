@@ -41,12 +41,10 @@ public class AuthorizationLoginService implements IAutheticationLogin {
     @Autowired
     public AuthorizationLoginService(
             UserRepository userRepository,
-            PasswordEncoder passwordEncoder,
             AuthenticationManager authenticationManager,
             GeneratedTokenAuthorizationService generatedTokenAuthorizationService
     ) {
         this.userRepository = userRepository;
-        this.passwordEncoder = passwordEncoder;
         this.authenticationManager = authenticationManager;
         this.generatedTokenAuthorizationService = generatedTokenAuthorizationService;
     }

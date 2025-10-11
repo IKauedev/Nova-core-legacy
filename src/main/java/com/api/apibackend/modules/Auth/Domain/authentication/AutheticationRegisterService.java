@@ -70,7 +70,6 @@ public class AutheticationRegisterService implements IAutheticationRegister {
             CustomerModelMapper customerModelMapper,
             ApplicationEventPublisher eventPublisher,
             UserService userService,
-            PasswordEncoder passwordEncoder,
             AnonymizationService anonymizationService,
             CustomerRepository customerRepository,
             UserRepository userRepository) {
@@ -82,7 +81,6 @@ public class AutheticationRegisterService implements IAutheticationRegister {
         this.customerModelMapper = customerModelMapper;
         this.eventPublisher = eventPublisher;
         this.userService = userService;
-        this.passwordEncoder = passwordEncoder;
         this.anonymizationService = anonymizationService;
         this.customerRepository = customerRepository;
         this.userRepository = userRepository;
